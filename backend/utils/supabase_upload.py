@@ -1,5 +1,5 @@
 import os
-from supabase_config import supabase
+from backend.supabase_config import supabase
 import io
 
 def upload_image_to_supababse(data: bytes, dest_path: str):
