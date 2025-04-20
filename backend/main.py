@@ -1,8 +1,8 @@
 from fastapi import FastAPI, File, Form, UploadFile, Body
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
-from supabase_config import supabase
-from supabase_upload import upload_image_to_supababse
+from backend.supabase_config import supabase
+from backend.utils.supabase_upload import upload_image_to_supababse
 import os, cv2, pickle
 import numpy as np
 import faiss
