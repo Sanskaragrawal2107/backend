@@ -18,15 +18,7 @@ WORKDIR /app
 COPY requirements.txt .
 
 # Install Python dependencies in stages for better caching
-RUN pip install --upgrade pip && pip install --no-cache-dir setuptools wheel
-
-# Install dependencies one by one to better isolate failures
-RUN pip install --no-cache-dir fastapi==0.95.1 uvicorn==0.22.0 python-multipart==0.0.6
-RUN pip install --no-cache-dir supabase==1.0.3 python-dotenv==1.0.0
-RUN pip install --no-cache-dir opencv-python-headless==4.7.0.72 numpy==1.24.3
-RUN pip install --no-cache-dir deepface==0.0.75
-RUN pip install --no-cache-dir faiss-cpu==1.7.3
-
+RUN pip install --no-cache-dir -r requirements.txt
 # Copy application code
 COPY backend/ ./backend
 COPY backend/utils/ ./backend/utils
