@@ -40,5 +40,8 @@ EXPOSE 8080
 # Set environment variables for Supabase (Railway provides env vars)
 ENV PYTHONUNBUFFERED=1
 
-# Start the app with Uvicorn
-CMD ["uvicorn", "backend.main:app", "--host", "0.0.0.0", "--port", "${PORT:-8080}"]
+# Create a startup script that handles the PORT environment variable
+RUN echo '#!/bin/bash\nPORT=${PORT:-8080}\nuvicorn backend.main:app --host 0.0.0.0 --port $PORT' > /app/start.sh && chmod +x /app/start.sh
+
+# Start the app with the shell script
+CMD ["/bin/bash", "/app/start.sh"]
