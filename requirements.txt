@@ -1,22 +1,32 @@
-requests>=2.27.1
-numpy>=1.14.0
-pandas>=0.23.4
-gdown>=3.10.1
-tqdm>=4.30.0
-Pillow>=5.2.0
-opencv-python>=4.5.5.64
-tensorflow>=1.9.0
-keras>=2.2.0
-mtcnn>=0.1.0
-retina-face>=0.0.1
+# Core dependencies
+requests==2.31.0
+numpy==1.24.3
+pandas==2.0.3
+gdown==4.7.1
+tqdm==4.66.1
+Pillow==10.0.0
+opencv-python==4.8.0.74
+
+# TensorFlow stack (fixed versions for compatibility)
+tensorflow==2.12.0
+keras==2.12.0
+tf-keras==2.12.0
+
+# Face detection
+mtcnn==0.1.1
+retina-face==0.0.13
+deepface==0.0.79
+
 # FastAPI stack
-fastapi>=0.95.0
-uvicorn>=0.21.0
-python-multipart>=0.0.5
+fastapi==0.103.1
+uvicorn==0.23.2
+python-multipart==0.0.6
+
 # Database
-supabase>=1.0.0
-# ML dependencies
-faiss-cpu>=1.7.0
-deepface>=0.0.79
+supabase==1.0.3
+
+# Vector search
+faiss-cpu==1.7.4
+
 # Utils
-python-dotenv>=0.20.0
+python-dotenv==1.0.0
